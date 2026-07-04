@@ -2,3 +2,9 @@ node_modules/
 dist/
 .env
 *.log
+
+# Lockfiles are excluded: a lockfile generated on Windows records the wrong
+# platform-specific optional native binaries (e.g. Rollup), which breaks
+# `npm install` on Render's Linux build (a known npm bug, npm/cli#4828).
+# Letting each environment resolve its own lockfile avoids that.
+package-lock.json
